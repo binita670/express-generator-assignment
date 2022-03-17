@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <script src="/javascripts/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-3"><%= title %></h1>
+      <hr />
+      <p style="font-size: 20px;">This is a list of posts from DB.JSON file.</p>
+      <a href="/" class="text-light text-decoration-none"><button type="button" class="btn btn-secondary m-auto">Go Back</button></a>
+      <table class="table table-bordered table-striped mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Post Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Posted By User Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach((element) => { %>
+              <tr>
+                <th scope="row"> <%=element.id %> </th>
+                <td> <%=element.title %> </td>
+                <td> <%=element.body %> </td>
+                <td> <%=element.userId %> </td>
+              </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
